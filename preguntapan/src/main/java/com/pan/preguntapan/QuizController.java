@@ -84,19 +84,19 @@ public class QuizController {
                 sessionData.agregarPuntuacion("pandemolde", 1);
                 break;
             default:
-                // En caso de que no haya opción válida (debería evitarse con validación en el frontend)
+                // En caso de que no haya opción válida 
                 break;
         }
         
         // Siguiente pregunta
-        int nextQuestion = Integer.parseInt(pregunta.replace("pregunta", "")) + 1;
+        int siguientepregunta = Integer.parseInt(pregunta.replace("pregunta", "")) + 1;
 
-        if (nextQuestion <= 7) {
+        if (siguientepregunta <= 7) {
             // Redirige a la siguiente pregunta
-            return "redirect:/pregunta" + nextQuestion;
+            return "/pregunta" + siguientepregunta;
         } else {
             // Redirige al resultado
-            return "redirect:/resultado";
+            return "/resultado";
         }
     }
 
@@ -114,11 +114,11 @@ public class QuizController {
         // Agregar el nombre del usuario y el tipo de pan al modelo
         model.addAttribute("nombre", sessionData.getNombre());
         model.addAttribute("tipoPan", tipoPan);
-        model.addAttribute("puntuacionTotal", sessionData.getPuntuacionTotal()); // Agregamos la puntuación total
+        model.addAttribute("puntuacionTotal", sessionData.getPuntuacionTotal()); 
 
 
-        // Pasar la URL de la imagen con extensión .jpg
-        String imagenUrl = "/images/" + tipoPan + ".jpg"; // Ruta de la imagen con extensión .jpg
+        // para poder poner la imagen
+        String imagenUrl = "/images/" + tipoPan + ".jpg"; 
         model.addAttribute("imagenUrl", imagenUrl);
 
         return "resultado"; 
