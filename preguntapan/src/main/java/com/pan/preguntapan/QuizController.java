@@ -28,7 +28,7 @@ public class QuizController {
 
     @GetMapping("/pregunta1")
     public String pregunta1() {
-        return "pregunta1"; // Devuelve la vista pregunta1.html
+        return "pregunta1";
     }
 
     @GetMapping("/pregunta2")
@@ -85,7 +85,7 @@ public class QuizController {
                 sessionData.agregarPuntuacion("pandemolde", 1);
                 break;
             default:
-                // En caso de que no haya opción válida (debería evitarse con validación en el frontend)
+                // En caso de que no haya opción válida
                 break;
         }
         
@@ -118,8 +118,8 @@ public class QuizController {
         model.addAttribute("puntuacionTotal", sessionData.getPuntuacionTotal()); // Agregamos la puntuación total
 
 
-        // Pasar la URL de la imagen con extensión .jpg
-        String imagenUrl = "/images/" + tipoPan + ".jpg"; // Ruta de la imagen con extensión .jpg
+        
+        String imagenUrl = "/images/" + tipoPan + ".jpg";
         model.addAttribute("imagenUrl", imagenUrl);
 
         return "resultado"; 
