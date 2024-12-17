@@ -22,12 +22,13 @@ public class QuizController {
         SessionData sessionData = (SessionData) session.getAttribute("sessionData");
         sessionData.setNombre(nombre);
         sessionData.setEdad(edad);
-        return "/pregunta1"; 
+        // Redirige a la primera pregunta
+        return "redirect:/pregunta1"; 
     }
 
     @GetMapping("/pregunta1")
     public String pregunta1() {
-        return "pregunta1"; 
+        return "pregunta1"; // Devuelve la vista pregunta1.html
     }
 
     @GetMapping("/pregunta2")
@@ -84,19 +85,19 @@ public class QuizController {
                 sessionData.agregarPuntuacion("pandemolde", 1);
                 break;
             default:
-                // En caso de que no haya opción válida 
+                // En caso de que no haya opción válida (debería evitarse con validación en el frontend)
                 break;
         }
         
         // Siguiente pregunta
-        int siguientepregunta = Integer.parseInt(pregunta.replace("pregunta", "")) + 1;
+        int nextQuestion = Integer.parseInt(pregunta.replace("pregunta", "")) + 1;
 
-        if (siguientepregunta <= 7) {
+        if (nextQuestion <= 7) {
             // Redirige a la siguiente pregunta
-            return "/pregunta" + siguientepregunta;
+            return "redirect:/pregunta" + nextQuestion;
         } else {
             // Redirige al resultado
-            return "/resultado";
+            return "redirect:/resultado";
         }
     }
 
@@ -114,11 +115,11 @@ public class QuizController {
         // Agregar el nombre del usuario y el tipo de pan al modelo
         model.addAttribute("nombre", sessionData.getNombre());
         model.addAttribute("tipoPan", tipoPan);
-        model.addAttribute("puntuacionTotal", sessionData.getPuntuacionTotal()); 
+        model.addAttribute("puntuacionTotal", sessionData.getPuntuacionTotal()); // Agregamos la puntuación total
 
 
-        // para poder poner la imagen
-        String imagenUrl = "/images/" + tipoPan + ".jpg"; 
+        // Pasar la URL de la imagen con extensión .jpg
+        String imagenUrl = "/images/" + tipoPan + ".jpg"; // Ruta de la imagen con extensión .jpg
         model.addAttribute("imagenUrl", imagenUrl);
 
         return "resultado"; 

@@ -6,7 +6,6 @@ import java.util.Map;
 public class SessionData {
     private String nombre;
     private int edad;
-
     private Map<String, Integer> puntuaciones; // Para almacenar las puntuaciones de cada tipo de pan
     private int puntuacionTotal; // Para almacenar la puntuación total
 
