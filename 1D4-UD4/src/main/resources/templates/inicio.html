@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-image: url('/imagenes/elementos.jpg');
+			background-size: cover;
+			background-position: center;
+			margin: 0;
+			padding: 0;
+			color: #fff;
+		}
+
+		.overlay {
+			background: rgba(0, 0, 0, 0.7);
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.container {
+			max-width: 800px;
+			text-align: center;
+		}
+
+		h1,
+		p {
+			color: #28a745;
+		}
+
+		.start-button {
+			padding: 10px 20px;
+			font-size: 16px;
+			background-color: #007bff;
+			color: #fff;
+			text-decoration: none;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	</style>
+	<title>Bienvenido</title>
+</head>
+
+<body>
+	<div class="overlay">
+		<div class="container">
+			<h1>Bienvenido a la página en la que descubrirás tu elemento de la naturaleza</h1>
+			<p>Este quiz te ayudarán a descubrir qué elemento de la naturaleza se ajusta más a tu personalidad. Cada
+				pregunta tiene varias opciones de respuesta, y debes elegir la que más te guste o se parezca a ti. Al
+				final del quiz, se sumarán los puntos de cada respuesta y se te mostrará el resultado. ¡Empecemos!</p>
+			<form th:action="@{/pregunta1}" method="post">
+                <button type="submit" class="start-button">Comenzar Quiz</button>
+            </form>
+		</div>
+	</div>
+</body>
+
+</html>

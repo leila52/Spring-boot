@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pregunta 6</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pregunta 6</h1>
+        <p>¿Qué plan prefieres para una tarde libre?</p>
+        <form th:action="@{/guardar-respuesta/pregunta6}" method="post">
+            <div>
+                <input type="checkbox" id="op1" name="value" value="baguette">
+                <label for="op1">Pasear por la ciudad</label>
+            </div>
+            <div>
+                <input type="checkbox" id="op2" name="value" value="croissant">
+                <label for="op2">Leer un libro</label>
+            </div>
+            <div>
+                <input type="checkbox" id="op3" name="value" value="brioche">
+                <label for="op3">Salir con amigos</label>
+            </div>
+            <div>
+                <input type="checkbox" id="op4" name="value" value="pan de molde">
+                <label for="op4">Ver películas en casa</label>
+            </div>
+            <button type="submit">Siguiente</button>
+        </form>
+    </div>
+</body>
+</html>

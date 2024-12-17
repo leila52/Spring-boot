@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Resultado</title>
+    <style>
+        body {
+    background-image: url('/images/fondo.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-top: 50px;
+    color: #000000;
+}
+
+p {
+    font-size: 1.5em;
+    text-align: center;
+    color: #000000;
+    margin-top: 20px;
+}
+
+strong {
+    color: #0d00ff;
+}
+
+img {
+    display: block;
+    max-width: 50%;
+    margin: 50px auto;
+    border-radius: 10px;
+}
+
+
+    </style>
+</head>
+<body>
+    <h1>¡Felicidades, <span th:text="${nombre}"></span>!</h1>
+    <p>Tu tipo de pan es: <strong th:text="${tipoPan}"></strong></p>
+    <p>Tu puntuación total es: <strong th:text="${puntuacionTotal}"></strong></p>
+    <img th:src="${imagenUrl}" th:alt="${tipoPan}" />    
+    <p><a th:href="@{/cerrar-sesion}">Volver al inicio</a></p>
+</body>
+</html>

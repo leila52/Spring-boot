@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pregunta 5</title>
+    <style>
+        body {
+    background-image: url('/images/fondo.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    width: 50%;
+    margin: 100px auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: black;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    color: white;
+    margin-bottom: 20px;
+}
+
+div {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #964caf;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #d046d2;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pregunta 5</h1>
+        <p>¿Qué prefieres desayunar?</p>
+        <form th:action="@{/guardar-respuesta/pregunta5}" method="post">
+            <div>
+                <input type="radio" id="op1" name="value" value="baguette" required>
+                <label for="op1">Tostadas con tomate</label>
+            </div>
+            <div>
+                <input type="radio" id="op2" name="value" value="croissant">
+                <label for="op2">Croissant con mantequilla</label>
+            </div>
+            <div>
+                <input type="radio" id="op3" name="value" value="brioche">
+                <label for="op3">Pan dulce</label>
+            </div>
+            <div>
+                <input type="radio" id="op4" name="value" value="pan de molde">
+                <label for="op4">Un sándwich</label>
+            </div>
+            <button type="submit">Siguiente</button>
+        </form>
+    </div>
+</body>
+</html>

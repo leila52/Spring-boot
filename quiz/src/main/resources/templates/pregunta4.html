@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pregunta 4</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pregunta 4</h1>
+        <p>¿Cuál es tu estación favorita?</p>
+        <form th:action="@{/guardar-respuesta/pregunta4}" method="post">
+            <div>
+                <input type="radio" id="op1" name="value" value="baguette" required>
+                <label for="op1">Primavera</label>
+            </div>
+            <div>
+                <input type="radio" id="op2" name="value" value="croissant">
+                <label for="op2">Otoño</label>
+            </div>
+            <div>
+                <input type="radio" id="op3" name="value" value="brioche">
+                <label for="op3">Verano</label>
+            </div>
+            <div>
+                <input type="radio" id="op4" name="value" value="pan de molde">
+                <label for="op4">Invierno</label>
+            </div>
+            <button type="submit">Siguiente</button>
+        </form>
+    </div>
+</body>
+</html>

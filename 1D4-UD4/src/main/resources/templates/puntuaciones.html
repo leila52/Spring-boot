@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tabla de Puntuaciones</title>
+	<style>
+		body {
+			background-image: url('/imagenes/interrogaciones.jpg');
+			font-family: 'Arial', sans-serif;
+			background-color: #f7f7f7;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+
+		.container {
+			background-color: #fff;
+			border-radius: 8px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			padding: 20px;
+			text-align: center;
+			width: 400px;
+		}
+
+		h2 {
+			color: #007bff;
+			margin-bottom: 10px;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-top: 20px;
+		}
+
+		th,
+		td {
+			border: 1px solid #ddd;
+			padding: 8px;
+			text-align: left;
+		}
+
+		th {
+			background-color: #f2f2f2;
+		}
+
+		td {
+			background-color: #fff;
+		}
+
+		a.button {
+			background-color: #28a745;
+			color: #fff;
+			border: none;
+			padding: 10px 20px;
+			margin-top: 15px;
+			font-size: 16px;
+			cursor: pointer;
+			border-radius: 4px;
+			text-decoration: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h2>Tabla de Puntuaciones</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Usuario</th>
+					<th>Elemento</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- Iterar sobre la lista de NombrePuntuacion -->
+				<tr th:each="nombrePuntuacion : ${datosPuntuaciones}">
+					<!-- Mostrar el nombre del jugador -->
+					<td th:text="${nombrePuntuacion.nombre}"></td>
+					<!-- Mostrar la puntuación -->
+					<td th:text="${nombrePuntuacion.puntuacion}"></td>
+				</tr>
+			</tbody>
+		</table>
+		<br />
+		<a th:href="@{/}" class="button">Volver al Inicio</a>
+	</div>
+</body>
+
+</html>

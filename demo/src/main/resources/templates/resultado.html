@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Resultado de Cálculo</title>
+</head>
+<body>
+    <h1>Resultado de Cálculo</h1>
+	<p  th:text="'Índice de Masa Corporal (IMC):'+${imc}"/>
+	<p  th:text="' Clasificación IMC: '+${clasificacionIMC}" />
+    <p th:text="'Índice de Grasa Corporal (IGC): ' + ${igc} +'%'"/>
+	<p th:text="' Clasificación IGC: '+${clasificacionIGC}" />
+    <a href="/">Calcular nuevamente</a>
+</body>
+</html>

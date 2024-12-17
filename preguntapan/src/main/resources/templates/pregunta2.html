@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pregunta 2</title>
+    <style>
+        body {
+    background-image: url('/images/fondo.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    padding: 20px;
+    color: black;
+}
+
+form {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    margin: 50px auto;
+}
+
+p {
+    font-size: 1.2em;
+    color: white;
+    text-align: center;
+}
+
+input[type="radio"] {
+    margin: 10px 5px 10px 5px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #964caf;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #d046d2;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Pregunta 2</h1>
+    <form th:action="@{/guardar-respuesta/pregunta2}" method="post">
+        <p>¿Qué tipo de bebida prefieres?</p>
+        <input type="radio" name="value" value="bagget" required> Vino<br>
+        <input type="radio" name="value" value="croissant"> Té<br>
+        <input type="radio" name="value" value="briyox"> Café<br>
+        <input type="radio" name="value" value="pandemolde"> Agua<br>
+        <button type="submit">Siguiente</button>
+    </form>
+</body>
+</html>

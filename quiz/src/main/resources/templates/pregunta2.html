@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pregunta 2</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pregunta 2</h1>
+        <p>¿Qué tres cosas no pueden faltar en tu día?</p>
+        <form th:action="@{/guardar-respuesta/pregunta2}" method="post">
+            <div>
+                <input type="checkbox" id="op1" name="value" value="baguette">
+                <label for="op1">Un paseo al aire libre</label>
+            </div>
+            <div>
+                <input type="checkbox" id="op2" name="value" value="croissant">
+                <label for="op2">Un buen café</label>
+            </div>
+            <div>
+                <input type="checkbox" id="op3" name="value" value="brioche">
+                <label for="op3">Música relajante</label>
+            </div>
+            <div>
+                <input type="checkbox" id="op4" name="value" value="pan de molde">
+                <label for="op4">Una comida rápida</label>
+            </div>
+            <button type="submit">Siguiente</button>
+        </form>
+    </div>
+</body>
+</html>

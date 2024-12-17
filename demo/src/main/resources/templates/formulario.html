@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cálculo de IMC e IGC</title>
+</head>
+<body>
+    <h1>Cálculo de IMC e IGC</h1>
+    <form action="#" th:action="@{/}" th:object="${persona}" method="post">
+        <table>
+            <tr>
+                <td>Altura (cm):</td>
+                <td><input type="number" th:field="*{altura}" /></td>
+                <td th:if="${#fields.hasErrors('altura')}" th:errors="*{altura}">Error en la altura</td>
+            </tr>
+            <tr>
+                <td>Peso (kg):</td>
+                <td><input type="number" th:field="*{peso}" /></td>
+                <td th:if="${#fields.hasErrors('peso')}" th:errors="*{peso}">Error en el peso</td>
+            </tr>
+            <tr>
+                <td>Edad:</td>
+                <td><input type="number" th:field="*{edad}" /></td>
+                <td th:if="${#fields.hasErrors('edad')}" th:errors="*{edad}">Error en la edad</td>
+            </tr>
+            <tr>
+                <td>Género (M/F):</td>
+                <td><input type="text" th:field="*{genero}" /></td>
+                <td th:if="${#fields.hasErrors('genero')}" th:errors="*{genero}">Error en el género</td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Calcular</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pregunta 3</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pregunta 3</h1>
+        <p>Describe tu día ideal:</p>
+        <form th:action="@{/guardar-respuesta/pregunta3}" method="post">
+            <textarea id="dayDescription" name="value" rows="5" cols="50" required></textarea>
+            <button type="submit">Siguiente</button>
+        </form>
+    </div>
+</body>
+</html>

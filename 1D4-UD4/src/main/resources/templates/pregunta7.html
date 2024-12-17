@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-image: url('/imagenes/interrogaciones.jpg');
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 400px;
+        }
+
+        h1 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .progress {
+            color: #28a745;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            line-height: 1.6; 
+            text-align: center; 
+        }
+
+        input[type="radio"] {
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .radio-group {
+            text-align: center; 
+        }
+    </style>
+    <title>Pregunta 7 de 7</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Cuando estás al aire libre, ¿qué actividad disfrutas más?</h1>
+        <div class="progress">Pregunta 7 de 7</div>
+        
+        <form action="/resultados" method="post">
+            <div class="radio-group">
+                <label><input type="radio" name="actividad" value="agua"> Caminar en la playa</label>
+                <label><input type="radio" name="actividad" value="tierra"> Escalar montañas</label>
+                <label><input type="radio" name="actividad" value="fuego"> Practicar deportes</label>
+                <label><input type="radio" name="actividad" value="aire"> Explorar bosques y senderos</label>
+            </div>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+</body>
+</html>

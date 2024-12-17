@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pregunta 1</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pregunta 1</h1>
+        <p>¿Qué prefieres hacer un domingo por la mañana?</p>
+        <form th:action="@{/guardar-respuesta/pregunta1}" method="post">
+            <div>
+                <input type="radio" id="op1" name="value" value="baguette" required>
+                <label for="op1">Ir al mercado</label>
+            </div>
+            <div>
+                <input type="radio" id="op2" name="value" value="croissant">
+                <label for="op2">Desayunar con café y libros</label>
+            </div>
+            <div>
+                <input type="radio" id="op3" name="value" value="brioche">
+                <label for="op3">Dormir hasta tarde</label>
+            </div>
+            <div>
+                <input type="radio" id="op4" name="value" value="pan de molde">
+                <label for="op4">Ver series en casa</label>
+            </div>
+            <button type="submit">Siguiente</button>
+        </form>
+    </div>
+</body>
+</html>
