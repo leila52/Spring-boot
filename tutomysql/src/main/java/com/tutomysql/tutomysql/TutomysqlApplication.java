@@ -24,9 +24,8 @@ private static final Logger log = LoggerFactory.getLogger(TutomysqlApplication.c
 		repository.save(new Costumer("Kim", "Bauer"));
 		repository.save(new Costumer("David", "Palmer"));
 		repository.save(new Costumer("Michelle", "Dessler"));
-  
-		 * 
-		 */
+  */
+		 
 		//repository.save(new Costumer("lorena", "garvin"));
 		
 		// listar todos los costumers
